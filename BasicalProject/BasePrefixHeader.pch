@@ -1,0 +1,17 @@
+//
+//  BasePrefixHeader.pch
+//  Baase
+//
+//  Created by chenjintian on 17/4/10.
+//  Copyright © 2017年 CJT. All rights reserved.
+//
+
+#ifndef BasePrefixHeader_pch
+#define BasePrefixHeader_pch
+
+#endif /* BasePrefixHeader_pch */
+
+#import "Common.h"
+#import "UIView+XWSDBase.h"
+#import "SCToastView.h"  //吐司
+#import "UnitTools.h" //通用工具

@@ -1,0 +1,21 @@
+//
+//  BasicPrefixHeader.pch
+//  CJT
+//
+//  Created by chenjintian on 17/4/10.
+//  Copyright © 2017年 XWSD. All rights reserved.
+//
+
+#ifndef BasicPrefixHeader_pch
+#define BasicPrefixHeader_pch
+
+#endif /* BasicPrefixHeader_pch */
+
+#import "Common.h"
+#import "Masonry.h"
+#import "UIView+Base.h"
+#import <SVProgressHUD.h>
+#import "SCToastView.h"  //吐司
+#import "Const.h"
+
+
