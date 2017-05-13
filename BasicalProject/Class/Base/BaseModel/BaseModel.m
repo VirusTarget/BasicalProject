@@ -65,8 +65,11 @@
         NSString *key = [NSString stringWithFormat:@"%s",ivar_getName(ivar)];
         // 成员变量的数据类型
 //        NSString *value = [NSString stringWithFormat:@"%s",ivar_getTypeEncoding(ivar)];
-        
-        dict[key] = [self valueForKey:key];
+        if ([self valueForKey:key])
+            dict[key] = [self valueForKey:key];
+        else {
+            dict[key] = @"";
+        }
     }
     
     // 释放

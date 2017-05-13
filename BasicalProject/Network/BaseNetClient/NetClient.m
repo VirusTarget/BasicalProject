@@ -63,18 +63,21 @@ static NetClient *__shareClient;
         
         [self.taskArray removeObject:task];
         
-        //1是陈威的正确状态，200是文祥的正确状态
         if (/* DISABLES CODE */ (YES)) {
-            [delegate netClientSuccess:responseObject];
+            if ([delegate respondsToSelector:@selector(netClientSuccess:WithTask:)]) {
+                [delegate netClientSuccess:responseObject WithTask:(NSURLSessionDataTask *)task];
+            }
         }
         else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [delegate netClientFail:responseObject];
-            });
+            if ([delegate respondsToSelector:@selector(netClientFail:WithTask:)]) {
+                [delegate netClientFail:responseObject WithTask:(NSURLSessionDataTask *)task];
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.taskArray removeObject:task];
-        [delegate netClientFail:nil];
+        if ([delegate respondsToSelector:@selector(netClientFail:WithTask:)]) {
+            [delegate netClientFail:nil WithTask:(NSURLSessionDataTask *)task];
+        }
     }];
     
     [task resume];

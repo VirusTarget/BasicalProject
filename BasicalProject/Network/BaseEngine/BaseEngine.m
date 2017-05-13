@@ -8,17 +8,20 @@
 
 #import "BaseEngine.h"
 
+@implementation BaseAPIConfig
+@end
+
 @implementation BaseEngine
 
 #pragma mark- <NetClientDelegate>
-- (void)netClientSuccess:(NSDictionary *)successDict {
+- (void)netClientSuccess:(NSDictionary *)successDict WithTask:(NSURLSessionDataTask *)task {
     self.task = nil;
     if (self.success) {
         self.success(successDict);
     }
 }
 
-- (void)netClientFail:(NSDictionary *)failDict {
+- (void)netClientFail:(NSDictionary *)failDict WithTask:(NSURLSessionDataTask *)task {
     self.task = nil;
     if (self.fail) {
         self.fail(failDict);

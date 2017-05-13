@@ -21,7 +21,7 @@
 
  @param successDict 请求结果
  */
-- (void)netClientSuccess:(NSDictionary *)successDict;
+- (void)netClientSuccess:(NSDictionary *)successDict WithTask:(NSURLSessionDataTask *)task;
 
 @optional
 
@@ -30,7 +30,7 @@
 
  @param failDict 失败原因
  */
-- (void)netClientFail:(NSDictionary *)failDict;
+- (void)netClientFail:(NSDictionary *)failDict WithTask:(NSURLSessionDataTask *)task;
 
 @end
 
