@@ -59,7 +59,7 @@ static NetClient *__shareClient;
      securityPolicy.validatesDomainName = NO;
      manager.securityPolicy = securityPolicy;
      */
-    NSURLSessionDataTask *task = [manager POST:MAINURL parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSURLSessionDataTask *task = [manager POST:method parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [self.taskArray removeObject:task];
         

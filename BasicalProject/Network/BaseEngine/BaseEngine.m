@@ -45,8 +45,12 @@
 - (void)startRequestWithConfig:(BaseAPIConfig *)config
                  successBlock:(void(^)(NSDictionary* dict))successBlock
                     failBlock:(void(^)(NSDictionary* dict))failBlock {
+    if (!config.url) {
+        config.url = MAINURL;
+    }
+    
     self.success = successBlock;
     self.fail = failBlock;
-    self.task = [[NetClient shareNetClient] postToMethod:config.method WithDict:config.param delegate:self];
+    self.task = [[NetClient shareNetClient] postToMethod:[NSString stringWithFormatter:@"%@/%@",config.url,config.method] WithDict:config.param delegate:self];
 }
 @end

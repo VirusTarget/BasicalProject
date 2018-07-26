@@ -37,6 +37,7 @@
     self.navigationArr = @[homeNavi,missionNavi,personNavi,messageNavi];
     for (UINavigationController *navi in self.navigationArr) {
         [self setupNavi:navi];
+        
     }
 }
 

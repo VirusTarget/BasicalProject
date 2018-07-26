@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 /**
  基础模型
@@ -33,4 +34,9 @@
  @return 模型
  */
 - (instancetype)initWithDict:(NSDictionary *)dict;
+
+/**
+ 加载字典
+ */
+- (void)loadDict:(NSDictionary *)dict;
 @end
